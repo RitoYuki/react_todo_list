@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 22px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  --accent-color:mediumblue; 
+  --backround-color: white;
+  --text-color:aliceblue;
+  --focus-red:red; 
+  --focus-green: limegreen; 
+  --icon-color:steelblue;
+  --item-bg:#eee;
+  --item-text:black;
+  --animation-time:0.4s; 
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  width: 100%; 
+  max-width: 500px;
+  
+  margin: auto;
+}
+
+.App.Dark{
+  --accent-color:black; 
+  --backround-color: #121212;
+  --text-color:Gainsboro;
+  --focus-red:#CF6679; 
+  --focus-green: #009687; 
+  --icon-color:steelblue;
+  --item-bg:rgb(60, 60, 60);
+  --item-text: Gainsboro;
+
+  background-color: var(--backround-color);
+  color: var(--item-text);
+}
+
+header {
+  width: 100%;
+  padding: 0 0.25em;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+}
+
+footer {
+  width: 100%;
+  padding: 0.25em;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  display: grid;
+  place-content: center;
+}
+
+ul {
+  width: 100%;
+  list-style: none;
+  padding: 0 0.25rem 0.25rem;
+}
+
+ul li::before {
+  content: "\200B";
+}
+
+.item {
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  margin: 0.25rem 0;
+  background-color: var(--item-bg);
+  color: var(--item-text);
+}
+
+.item:first-child {
+  margin: 0;
+}
+
+.item input[type="checkbox"] {
+  text-align: center;
+  width: 2.5rem;
+  width: 48px;
+  min-width: 48px;
+  height: 2.5rem;
+  height: 48px;
+  min-height: 48px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.item input[type="checkbox"]:focus + label {
+  text-decoration: underline;
+}
+
+.item > label {
+  font-size: 0.75rem;
+  flex-grow: 1;
+}
+
+.item svg {
+  width: 48px;
+  min-width: 48px;
+  height: 36px;
+  font-size: 1rem;
+  color: var(--icon-color);
+  cursor: pointer;
+  transition: var(--animation-time);
+  transform: scale(1);
+}
+
+.item svg:focus, 
+.item svg:hover {
+  color: var(--focus-red);
+  outline: none;
+  transition: var(--animation-time);
+  transform: scale(1.1);
+}
+
+.addForm {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.5rem 0 0;
+  padding: 0 0.5rem 0.25rem;
+  
+}
+
+.addForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.addForm input[type='text'] {
+  flex-grow: 1;
+  max-width: calc(100% - 50px);
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin-right: 0.25rem;
+  outline: none;
+}
+
+button {
+  height: 48px;
+  min-width: 48px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: var(--text-color);
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: var(--animation-time);
+  transform: scale(1);
+}
+
+button:focus, 
+button:hover {
+  color: var(--text-color);
+  background-color: var(--focus-green);
+  outline: none;
+  transition: var(--animation-time);
+  transform: scale(1.1);
+}
+
+.searchForm {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.25rem 0 0;
+  padding: 0 0.5rem 0.5rem;
+
+}
+
+.searchForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.searchForm input[type='text'] {
+  flex-grow: 1;
+  max-width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
+}
