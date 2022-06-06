@@ -3,7 +3,7 @@ import {useState, createContext} from 'react';
 
 const DataContext = createContext({});
 export const DataProvider = ({children}) => {
-    const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist')));
+    const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist'))|| []);
     const [newItem, setNewItem] = useState('')
     const [search, setSearch] = useState('')
     
